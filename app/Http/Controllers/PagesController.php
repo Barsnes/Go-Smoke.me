@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
+use App\Smoke;
 
 use Illuminate\Http\Request;
 
@@ -12,7 +14,9 @@ class PagesController extends Controller
   }
 
   public function browse(){
-    return view('index');
+    $smokes = Smoke::get();
+
+    return view('browse')->withSmokes($smokes);
   }
 
 }
