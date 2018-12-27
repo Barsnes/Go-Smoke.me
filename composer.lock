@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "8826f97e5461451fbb42f067d6fd0be5",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1998,6 +1998,52 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "secrethash/trickster",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/secrethash/trickster.git",
+                "reference": "2030f6455cec0b72c3b2ca832b6e72e4b3696993"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/secrethash/trickster/zipball/2030f6455cec0b72c3b2ca832b6e72e4b3696993",
+                "reference": "2030f6455cec0b72c3b2ca832b6e72e4b3696993",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Secrethash\\Trickster\\TricksterServiceProvider"
+                    ],
+                    "aliases": {
+                        "Trickster": "Secrethash\\Trickster\\Facade\\Trickster"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Secrethash\\Trickster\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shashwat Mishra",
+                    "email": "shashwat9630@gmail.com"
+                }
+            ],
+            "description": "Trickster is a package for laravel that has many useful tricks that can be used for quick and easy website management.",
+            "time": "2017-09-14T02:33:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

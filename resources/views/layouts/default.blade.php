@@ -2,9 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>GoSmokeMe @yield('title')</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <title>GoSmokeMe - @yield('title')</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('script')
   </head>
   <body>
@@ -18,10 +19,18 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        @if (request()->path() == '/')
+          <a class="nav-link active" href="/">Home</a>
+        @else
+          <a class="nav-link" href="/">Home</a>
+        @endif
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Browse</a>
+        @if (request()->path() == 'browse')
+          <a class="nav-link active" href="/browse">Browse</a>
+        @else
+          <a class="nav-link" href="/browse">Browse</a>
+        @endif
       </li>
     </ul>
   </div>
@@ -41,7 +50,6 @@
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
-
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
