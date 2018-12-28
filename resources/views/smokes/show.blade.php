@@ -13,7 +13,7 @@
       <div class="progress" style="margin-top:.5rem">
         <div class="progress-bar bg-info" role="progressbar" style="width: {{ $smoke->difficulty }}%" aria-valuenow="{{ $smoke->difficulty }}" aria-valuemin="0" aria-valuemax="100">{{ $smoke->difficulty }}%</div>
       </div>
-      <h6 style="margin-top:.5rem" class="text-muted">Created by <a href="/user/{{ $smoke->user->id }}/">{{ $smoke->user->name }}</a></h6>
+      <h6 style="margin-top:.5rem" class="text-muted">Created by <a href="/users/{{ $smoke->user->id }}/">{{ $smoke->user->name }}</a></h6>
     </div>
   </div>
   @endforeach

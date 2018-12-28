@@ -28,8 +28,16 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
 
-        view()->composer('*', function($view){
-          $view->with('user', Auth::user() ?? '');
-        });
+        if(\Auth::check()){
+            view()->composer('*', function($view){
+              $view->with('loggedInUser', '');
+            });
+           }
+           else{
+             view()->composer('*', function($view){
+               $view->with('loggedInUser', Auth::user() ?? '');
+             });
+           }
+
     }
 }
