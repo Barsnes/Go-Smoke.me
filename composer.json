@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.4.0",
         "secrethash/trickster": "^2.3"
     },
     "require-dev": {

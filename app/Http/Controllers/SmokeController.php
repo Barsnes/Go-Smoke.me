@@ -61,48 +61,47 @@ class SmokeController extends Controller
         return redirect('/');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+      // Validate data
+      $this->validate($request, array(
+          'approved' => 'required|integer',
+        ));
+
+        $smoke = Smoke::find($id);
+        $smoke->approved = $request->approved;
+        $smoke->save();
+
+        // Redirect
+        return redirect('/admin/approve');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+      Smoke::destroy($id);
+      // Redirect
+      return redirect('/admin/approve');
     }
+
+    public function approve(){
+      $user = Auth::user();
+
+      if ($user->role == 'admin') {
+        $smokes = Smoke::get();
+        return view('smokes.approve')->withSmokes($smokes);
+      } else {
+        return redirect('/');
+      }
+    }
+
 }

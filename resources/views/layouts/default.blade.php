@@ -57,7 +57,7 @@
                       Profile
                   </a>
                   @if ($loggedInUser->role == 'admin')
-                    <a class="dropdown-item" href="/smokes/approve">
+                    <a class="dropdown-item" href="/admin/approve">
                         Approve Smokes
                     </a>
                   @endif
