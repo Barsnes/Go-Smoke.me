@@ -4,9 +4,23 @@
 
 <div class="container mt-5">
     <h1 class="title">Browse smokes</h1>
-    <div class="jumbotron bg-smoke mb-5">
+    <div class="jumbotron bg-smoke mb-5 pt-3 pb-4">
       <div class="search">
-
+        <h2>Search smokes</h2>
+        <div class="row">
+          <div class="col" align="right">
+            <form method="POST" role="search" onsubmit="get_sell_sheet(); return false;">
+              @csrf
+              <div class="input-group">
+                  <input id="q" type="text" class="form-control" style="max-width:50%" name="q"
+                      placeholder="Search">
+                  <button type="submit" class="btn btn-sm btn-info">
+                      Search
+                  </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <hr class="border-white">
@@ -33,4 +47,12 @@
     @endforeach
     </div>
 </div>
+
+<script>
+  function get_sell_sheet(){
+    var q = document.getElementById("q").value;
+    var url = "{{ Request::root() }}/search/?q=" + q;
+    window.location.href = url;
+  }
+</script>
 @endsection
