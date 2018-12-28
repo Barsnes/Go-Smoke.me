@@ -10,7 +10,7 @@
   </head>
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #663399">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ECA72C">
   <div class="container">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,6 +56,11 @@
                   <a class="dropdown-item" href="/users/{{ $loggedInUser->id }}">
                       Profile
                   </a>
+                  @if ($loggedInUser->role == 'admin')
+                    <a class="dropdown-item" href="/smokes/approve">
+                        Approve Smokes
+                    </a>
+                  @endif
                   <hr style="border: .4px solid #FFF">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();

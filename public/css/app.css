@@ -13,7 +13,7 @@
   --cyan: #3498DB;
   --white: #fff;
   --gray: #999;
-  --gray-dark: #303030;
+  --gray-dark: #454c55;
   --primary: #375a7f;
   --secondary: #444;
   --success: #00bc8c;
@@ -71,7 +71,7 @@ body {
   line-height: 1.5;
   color: #fff;
   text-align: left;
-  background-color: #222;
+  background-color: #0D0C1D;
 }
 
 [tabindex="-1"]:focus {
@@ -9735,5 +9735,13 @@ a.text-dark:focus {
 
 .list-group-item-action .list-group-item-heading {
   color: #fff;
+}
+
+.bg-smoke {
+  background-color: #44355B !important;
+}
+
+.bg-smoke-y {
+  background-color: #ECA72C !important;
 }
 
