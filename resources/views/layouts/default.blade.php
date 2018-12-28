@@ -57,6 +57,9 @@
                   <a class="dropdown-item" href="/users/{{ $loggedInUser->id }}">
                       Profile
                   </a>
+                  <a class="dropdown-item" href="/smokes/create">
+                      Create new smoke
+                  </a>
                   @if ($loggedInUser->role == 'admin')
                     <a class="dropdown-item" href="/admin/approve">
                         Approve Smokes

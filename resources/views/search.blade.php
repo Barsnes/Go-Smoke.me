@@ -1,5 +1,13 @@
 @extends('layouts.default')
 
+@section('title')
+  @if (isset($query))
+    {{ $query }}
+  @else
+    Search
+  @endif
+@endsection
+
 @section('content')
 
 <div class="container mt-5">

@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+  Browse
+@endsection
+
 @section('content')
 
 <div class="container mt-5">
