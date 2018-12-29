@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Input;
 
 Route::get('/', 'PagesController@index');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'PagesController@index');
 Route::get('/browse', 'PagesController@browse');
