@@ -124,7 +124,7 @@
   						<li class="list-inline-item"><a href="https://twitter.com/_Barsnes" target="_blank"><i class="fab fa-twitter"></i></a></li>
   						<li class="list-inline-item"><a href="https://github.com/Barsnes/Go-Smoke.me" target="_blank"><i class="fab fa-github"></i></a></li>
   						{{-- <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li> --}}
-  						<li class="list-inline-item"><a href="mailto:tobiasbarsnes@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+  						<li class="list-inline-item"><a href="mailto:mail@go-smoke.me" target="_blank"><i class="fa fa-envelope"></i></a></li>
   					</ul>
   				</div>
   				</hr>
