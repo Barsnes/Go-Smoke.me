@@ -14,7 +14,7 @@ class PagesController extends Controller
   }
 
   public function browse(){
-    $smokes = Smoke::get();
+    $smokes = Smoke::get()->reverse();
 
     return view('browse')->withSmokes($smokes);
   }
