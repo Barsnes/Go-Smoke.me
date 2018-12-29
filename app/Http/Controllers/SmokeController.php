@@ -97,8 +97,6 @@ class SmokeController extends Controller
 
       Mail::to($user)->send(new smokeDeleted($smoke));
 
-      Storage::delete('smokeVideos/' . $smoke->video);
-
       Smoke::destroy($id);
 
       // Redirect
