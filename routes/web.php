@@ -6,7 +6,9 @@ Route::get('/', 'PagesController@index');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'PagesController@index');
+Route::get('/home', function() {
+  return redirect('/');
+});
 Route::get('/browse', 'PagesController@browse');
 
 Route::resource('/smokes', 'SmokeController');
