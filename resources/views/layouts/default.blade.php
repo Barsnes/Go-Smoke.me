@@ -39,6 +39,11 @@
   </div>
     <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
+        @if (isset($loggedInUser->id))
+          <li class="nav-item">
+              <a style="margin-left:.5rem" class="btn btn-success my-2 my-sm-0" href="/smokes/create">Create new smoke</a>
+          </li>
+        @endif
         @guest
             <li class="nav-item">
                 <a class="btn btn-outline-info my-2 my-sm-0" style="color: #FFF" href="/login">Login</a>
