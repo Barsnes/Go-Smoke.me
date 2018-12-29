@@ -21,8 +21,19 @@ Route::any('/search',function(){
     if ($q == '') {
       return view('search');
     }
-    $smoke = Smoke::where('title','LIKE','%'.$q.'%')->orWhere('map','LIKE','%'.$q.'%')->get();
-    if(count($smoke) > 0)
-        return view('search')->withSmokes($smoke)->withQuery($q);
-    else return view ('search')->withMessage('No smokes found. Try to search for a different keyword!')->withQuery($q);
+    $smokes = Smoke::where('title','LIKE','%'.$q.'%')->orWhere('map','LIKE','%'.$q.'%')->get();
+    $smokeCount = 0;
+    foreach ($smokes as $smoke) {
+      if ($smoke->approved == '0') {
+
+      } else {
+        $smokeCount ++;
+      };
+    };
+    if($smokeCount > 0) {
+        return view('search')->withSmokes($smokes)->withQuery($q);
+      }
+    else {
+      return view ('search')->withMessage('No smokes found. Try to search for a different keyword!')->withQuery($q);
+    }
 });
