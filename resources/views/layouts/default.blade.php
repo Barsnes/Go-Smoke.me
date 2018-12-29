@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{ Html::style('css/fontawesome/css/all.css') }}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-LRlmVvLKVApDVGuspQFnRQJjkv0P7/YFrw84YYQtmYG4nK8c+M+NlmYDCv0rKWpG" crossorigin="anonymous">
     @yield('script')
   </head>
   <body>
@@ -100,23 +100,20 @@
   					</ul>
   				</div>
   				<div class="col-xs-12 col-sm-4 col-md-4">
-  					<h5>Quick links</h5>
+  					<h5>Other links</h5>
   					<ul class="list-unstyled quick-links">
-  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>ToS</a></li>
+  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Press</a></li>
   						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
   						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
   						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
   					</ul>
   				</div>
   				<div class="col-xs-12 col-sm-4 col-md-4">
-  					<h5>Quick links</h5>
+  					<h5>Social links</h5>
   					<ul class="list-unstyled quick-links">
-  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
-  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
-  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-  						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-  						<li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+  						<li><a href="https://github.com/Barsnes/Go-Smoke.me"><i class="fab fa-github"></i></i>Github</a></li>
+  						<li><a href="https://twitter.com/_Barsnes"><i class="fab fa-twitter"></i></i>Twitter</a></li>
   					</ul>
   				</div>
   			</div>
