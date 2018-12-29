@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Smoke;
+use App\Mail\smokeDeleted;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Http\Request;
 
 class SmokeController extends Controller
 {
-
-
     public function index()
     {
       $smokes = Smoke::get();
@@ -88,7 +88,14 @@ class SmokeController extends Controller
 
     public function destroy($id)
     {
+
+      $smoke = Smoke::find($id);
+      $user = $smoke->user;
+
+      Mail::to($user)->send(new smokeDeleted($smoke));
+
       Smoke::destroy($id);
+
       // Redirect
       return redirect('/admin/approve');
     }
