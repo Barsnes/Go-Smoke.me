@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+import 'url-search-params-polyfill';
 
 /*
  |--------------------------------------------------------------------------

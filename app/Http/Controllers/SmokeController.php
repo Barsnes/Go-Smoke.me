@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Smoke;
-use App\Mail\smokeDeleted;
+use App\Mail\smokeApproved;
 use App\Mail\smokeSubmitted;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -58,8 +58,6 @@ class SmokeController extends Controller
 
         $smoke->save();
 
-        Mail::to($user)->send(new smokeSubmitted($smoke));
-
         // Redirect
         return redirect('/');
     }
@@ -83,6 +81,9 @@ class SmokeController extends Controller
 
         $smoke = Smoke::find($id);
         $smoke->approved = $request->approved;
+        $user = $smoke->user;
+        Mail::to($user)->send(new smokeApproved($smoke));
+
         $smoke->save();
 
         // Redirect

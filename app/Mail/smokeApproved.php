@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class smokeDeleted extends Mailable
+class smokeApproved extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -21,6 +21,6 @@ class smokeDeleted extends Mailable
 
     public function build()
     {
-      return $this->view('emails.smokeDeleted');
+      return $this->view('emails.smokeApproved');
     }
 }
