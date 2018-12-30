@@ -57,9 +57,7 @@
       if (request()->url() == 'https://go-smoke.me/browse') {
         $url = str_replace('https://go-smoke.me', '', $pageUrl);
       }
-
     @endphp
-    {{ $url }} <br>
     <nav aria-label="Page navigation example">
     </div>
     <ul class="pagination justify-content-center">
