@@ -103,7 +103,7 @@ if (url.includes(substring)) {
   lastChar --;
   url = url.substring(lastChar, url.length - 1);
   newUrl = url.concat(lastChar);
-  prevUrl = newUrl.split("tps:").pop();
+  prevUrl = newUrl.split("").pop();
   document.getElementById("prev").href = prevUrl;
 }
 
