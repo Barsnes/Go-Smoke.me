@@ -103,6 +103,8 @@ if (url.includes(substring)) {
   lastChar --;
   url = url.substring(lastChar, url.length - 1);
   newUrl = url.concat(lastChar);
+  addToUrl = 'ht';
+  newUrl = addToUrl.concat(newUrl);
   document.getElementById("prev").href = newUrl;
 }
 
@@ -112,6 +114,8 @@ if (url.includes(substring)) {
   lastChar ++;
   url = url.substring(lastChar, url.length - 1);
   newUrl = url.concat(lastChar);
+  addToUrl = 'http';
+  newUrl = addToUrl.concat(newUrl);
   document.getElementById("next").href = newUrl;
 }
 
