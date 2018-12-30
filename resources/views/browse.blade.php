@@ -57,12 +57,14 @@
       if (request()->url() == 'https://go-smoke.me/browse') {
         $url = str_replace('https://go-smoke.me', '', $pageUrl);
       }
+
+      $currUrl = request()->url();
     @endphp
     <nav aria-label="Page navigation example">
     </div>
     <ul class="pagination justify-content-center">
         <li class="page-item">
-          <a id="prev" class="page-link" href="" aria-label="Previous">
+          <a id="prev" class="page-link" href="{{ $currUrl }}?page={{ $smokes->currentPage() - 1 }}" aria-label="Previous">
             <span aria-hidden="true"><i class="fal fa-arrow-circle-left"></i></span>
             <span class="sr-only">Previous</span>
           </a>
@@ -83,7 +85,7 @@
         <li class="page-item"><a class="page-link" href="/browse?page=3">3</a></li>
       @endif
       <li class="page-item">
-        <a class="page-link" href="" id="next" aria-label="Previous">
+        <a class="page-link" href="{{ $currUrl }}?page={{ $smokes->currentPage() + 1 }}" id="next" aria-label="Previous">
           <span aria-hidden="true"><i class="fal fa-arrow-circle-right"></i></span>
           <span class="sr-only">Next</span>
         </a>
@@ -91,35 +93,5 @@
     </ul>
   </nav>
 </div>
-
-<script type="text/javascript">
-
-url = '{{ request()->fullUrl() }}';
-substring = "?page=";
-
-if (url.includes(substring)) {
-  url = '{{ request()->fullUrl() }}';
-  lastChar = url[url.length -1];
-  lastChar --;
-  url = url.slice(0, -1);
-  newUrl = url.concat(lastChar);
-  document.getElementById("prev").href = newUrl;
-}
-
-if (url.includes(substring)) {
-  url = '{{ request()->fullUrl() }}';
-  lastChar = url[url.length -1];
-  lastChar ++;
-  url = url.slice(0, -1);
-  newUrl = url.concat(lastChar);
-  document.getElementById("next").href = newUrl;
-}
-
-
-  function get_sell_sheet(){
-    var q = document.getElementById("q").value;
-    var url = "{{ Request::root() }}/search/?q=" + q;
-    window.location.href = url;
-  }
-</script>
+{{ $smokes->currentPage() }}
 @endsection
