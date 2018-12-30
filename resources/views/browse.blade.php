@@ -103,7 +103,7 @@ if (url.includes(substring)) {
   lastChar --;
   url = url.substring(lastChar, url.length - 1);
   newUrl = url.concat(lastChar);
-  prevUrl = newUrl.split("tp:").pop();
+  prevUrl = newUrl.split("tps:").pop();
   document.getElementById("prev").href = prevUrl;
 }
 
@@ -113,7 +113,7 @@ if (url.includes(substring)) {
   lastChar ++;
   url = url.substring(lastChar, url.length - 1);
   newUrl = url.concat(lastChar);
-  prevUrl = newUrl.split("p:").pop();
+  prevUrl = newUrl.split("s:").pop();
   document.getElementById("next").href = prevUrl;
 }
 
