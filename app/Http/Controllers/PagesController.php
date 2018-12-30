@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Smoke;
 
@@ -14,7 +16,7 @@ class PagesController extends Controller
   }
 
   public function browse(){
-    $smokes = Smoke::get()->reverse();
+    $smokes = Smoke::latest()->paginate(6);
 
     return view('browse')->withSmokes($smokes);
   }

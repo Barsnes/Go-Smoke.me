@@ -92,7 +92,7 @@
 </div>
 
     <section id="footer">
-  		<div class="container pt-5">
+  		<div class="container pt-5 pb-5">
   			<div class="row text-center text-xs-center text-sm-left text-md-left">
   				<div class="col-xs-12 col-sm-4 col-md-4">
   					<h5>Quick links</h5>
@@ -119,6 +119,7 @@
   					<ul class="list-unstyled quick-links">
   						<li><a href="https://github.com/Barsnes/Go-Smoke.me"><i class="fab fa-github"></i></i>Github</a></li>
   						<li><a href="https://twitter.com/_Barsnes"><i class="fab fa-twitter"></i></i>Twitter</a></li>
+              <li><a href="https://www.paypal.me/Barsnes" target="_blank"><i class="fas fa-usd-circle"></i>Donate</a></li>
   					</ul>
   				</div>
   			</div>
@@ -129,7 +130,8 @@
   						<li class="list-inline-item"><a href="https://twitter.com/_Barsnes" target="_blank"><i class="fab fa-twitter"></i></a></li>
   						<li class="list-inline-item"><a href="https://github.com/Barsnes/Go-Smoke.me" target="_blank"><i class="fab fa-github"></i></a></li>
   						{{-- <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li> --}}
-  						<li class="list-inline-item"><a href="mailto:mail@go-smoke.me" target="_blank"><i class="fa fa-envelope"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.paypal.me/Barsnes" target="_blank"><i class="fas fa-usd-circle"></i></a></li>
+              <li class="list-inline-item"><a href="mailto:mail@go-smoke.me" target="_blank"><i class="fa fa-envelope"></i></a></li>
   					</ul>
   				</div>
   				</hr>
@@ -137,6 +139,7 @@
   			<div class="row">
   				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
   					<p class="h6">&copy All right Reversed.<a class="text-green ml-2" href="https://go-smoke.me" target="_blank">GoSmoke.Me</a></p>
+            <p>This is a free and open source webapp created by <a href="https://twitter.com/_Barsnes" target="_blank"><strong>Tobias Barsnes</strong></a> <a href="https://www.paypal.me/Barsnes" target="_blank"><br><i class="fas fa-usd-circle"></i> Donate</a></p>
   				</div>
   				</hr>
   			</div>

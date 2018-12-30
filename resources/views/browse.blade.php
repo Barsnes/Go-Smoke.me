@@ -12,12 +12,12 @@
       <div class="search">
         <h2>Search smokes</h2>
         <div class="row">
-          <div class="col" align="right">
+          <div class="col col-centered">
             <form method="POST" role="search" onsubmit="get_sell_sheet(); return false;">
               @csrf
               <div class="input-group">
-                  <input id="q" type="text" class="form-control" style="max-width:50%" name="q"
-                      placeholder="Search">
+                  <input id="q" type="text" class="form-control" style="max-width:100%" name="q"
+                      placeholder="Search.. ex: Mirage">
                   <button type="submit" class="btn btn-sm btn-info">
                       Search
                   </button>
@@ -49,10 +49,77 @@
         </div>
       @endif
     @endforeach
+    @php
+      $pageUrl = request()->fullUrl();
+      if (request()->url() == 'http://localhost:8000/browse') {
+        $url = str_replace('http://localhost:8000', '', $pageUrl);
+      }
+      if (request()->url() == 'https://go-smoke.me/browse') {
+        $url = str_replace('https://go-smoke.me', '', $pageUrl);
+      }
+
+    @endphp
+    {{ $url }} <br>
+    <nav aria-label="Page navigation example">
     </div>
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a id="prev" class="page-link" href="" aria-label="Previous">
+            <span aria-hidden="true"><i class="fal fa-arrow-circle-left"></i></span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        @if ($url == '/browse?page=1')
+          <li class="page-item disabled"><a class="page-link disabled" href="/browse?page=1" tabindex="-1">1</a></li>
+        @else
+          <li class="page-item"><a class="page-link" href="/browse?page=1">1</a></li>
+        @endif
+      @if ($url == '/browse?page=2')
+        <li class="page-item disabled"><a class="page-link disabled" href="/browse?page=2" tabindex="-1">2</a></li>
+      @else
+        <li class="page-item"><a class="page-link" href="/browse?page=2">2</a></li>
+      @endif
+      @if ($url == '/browse?page=3' )
+        <li class="page-item disabled"><a class="page-link disabled" href="/browse?page=3" tabindex="-1">3</a></li>
+      @else
+        <li class="page-item"><a class="page-link" href="/browse?page=3">3</a></li>
+      @endif
+      <li class="page-item">
+        <a class="page-link" href="" id="next" aria-label="Previous">
+          <span aria-hidden="true"><i class="fal fa-arrow-circle-right"></i></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
 
-<script>
+<script type="text/javascript">
+
+url = '{{ request()->fullUrl() }}';
+substring = "?page=";
+
+if (url.includes(substring)) {
+  url = '{{ request()->fullUrl() }}';
+  lastChar = url[url.length -1];
+  lastChar --;
+  url = url.substring(lastChar, url.length - 1);
+  newUrl = url.concat(lastChar);
+  prevUrl = newUrl.split("tp:").pop();
+  document.getElementById("prev").href = prevUrl;
+}
+
+if (url.includes(substring)) {
+  url = '{{ request()->fullUrl() }}';
+  lastChar = url[url.length -1];
+  lastChar ++;
+  url = url.substring(lastChar, url.length - 1);
+  newUrl = url.concat(lastChar);
+  prevUrl = newUrl.split("p:").pop();
+  document.getElementById("next").href = prevUrl;
+}
+
+
   function get_sell_sheet(){
     var q = document.getElementById("q").value;
     var url = "{{ Request::root() }}/search/?q=" + q;
