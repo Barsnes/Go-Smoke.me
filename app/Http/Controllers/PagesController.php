@@ -17,7 +17,7 @@ class PagesController extends Controller
 
     $smokes = Smoke::withCount('vote')
     ->orderBy('vote_count', 'desc')
-    ->get();
+    ->get()->take(3);
 
     return view('index')->withSmokes($smokes);
   }

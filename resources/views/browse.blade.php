@@ -28,6 +28,7 @@
       </div>
     </div>
     <hr class="border-white">
+    <h1 class="title">Recently added</h1>
     <div class="row mt-5">
     @foreach ($smokes as $smoke)
       @if ($smoke->approved == '1')
