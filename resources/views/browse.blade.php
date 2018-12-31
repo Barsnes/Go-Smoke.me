@@ -13,7 +13,7 @@
         <h2>Search smokes</h2>
         <div class="row">
           <div class="col col-centered">
-            <form method="POST" role="search" onsubmit="get_sell_sheet(); return false;">
+            <form method="POST" role="search" onsubmit="get_search(); return false;">
               @csrf
               <div class="input-group">
                   <input id="q" type="text" class="form-control" style="max-width:100%" name="q"
@@ -111,4 +111,11 @@
     </ul>
   </nav>
 </div>
+<script type="text/javascript">
+  function get_search(){
+  var q = document.getElementById("q").value;
+  var url = "{{ Request::root() }}/search/?q=" + q;
+  window.location.href = url;
+  }
+</script>
 @endsection

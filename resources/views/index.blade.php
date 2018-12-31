@@ -17,7 +17,7 @@
     </div>
     <div class="row offset-1">
       <div class="col">
-        <form method="POST" role="search" onsubmit="get_sell_sheet(); return false;">
+        <form method="POST" role="search" onsubmit="get_search(); return false;">
           @csrf
           <div class="input-group">
               <input id="q" type="text" class="form-control" style="max-width:50%" name="q"
@@ -71,4 +71,12 @@
     @endif
   @endforeach
   </div>
+</div>
+<script type="text/javascript">
+  function get_search(){
+  var q = document.getElementById("q").value;
+  var url = "{{ Request::root() }}/search/?q=" + q;
+  window.location.href = url;
+  }
+</script>
 @endsection

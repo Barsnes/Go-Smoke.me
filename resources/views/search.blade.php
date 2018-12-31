@@ -31,7 +31,6 @@
       </div>
     </div>
     <div class="row mt-5">
-      <div class="col">
         @if (isset($smokes))
           @foreach ($smokes as $smoke)
             @if ($smoke->approved == '1')
@@ -55,9 +54,12 @@
           @endforeach
         @endif
       @if (isset($message))
-        {{ $message }}
+        <div class="row">
+          <div class="col ml-3">
+            {{ $message }}
+          </div>
+        </div>
       @endif
-      </div>
     </div>
 </div>
 

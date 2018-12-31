@@ -17,6 +17,28 @@ Route::resource('/users', 'UserController');
 
 Route::get('/admin/approve', 'SmokeController@approve');
 
+Route::any('/search',function(){
+  $q = Request::query('q');
+    if ($q == '') {
+      return view('search');
+    }
+    $smokes = Smoke::where('title','LIKE','%'.$q.'%')->orWhere('map','LIKE','%'.$q.'%')->get();
+    $smokeCount = 0;
+    foreach ($smokes as $smoke) {
+      if ($smoke->approved == '0') {
+
+      } else {
+        $smokeCount ++;
+      };
+    };
+    if($smokeCount > 0) {
+        return view('search')->withSmokes($smokes)->withQuery($q);
+      }
+    else {
+      return view ('search')->withMessage('No smokes found. Try to search for a different keyword!')->withQuery($q);
+    }
+});
+
 Route::get('/smoke/vote/{id}', function($id){
   if (Auth::User()) {
     $user = Auth::user();
@@ -38,26 +60,4 @@ Route::get('/smoke/vote/{id}', function($id){
       return back();
   }
 } else return redirect('/');
-});
-
-Route::any('/search',function(){
-  $q = Request::query('q');
-    if ($q == '') {
-      return view('search');
-    }
-    $smokes = Smoke::where('title','LIKE','%'.$q.'%')->orWhere('map','LIKE','%'.$q.'%')->get();
-    $smokeCount = 0;
-    foreach ($smokes as $smoke) {
-      if ($smoke->approved == '0') {
-
-      } else {
-        $smokeCount ++;
-      };
-    };
-    if($smokeCount > 0) {
-        return view('search')->withSmokes($smokes)->withQuery($q);
-      }
-    else {
-      return view ('search')->withMessage('No smokes found. Try to search for a different keyword!')->withQuery($q);
-    }
 });
