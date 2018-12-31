@@ -98,7 +98,7 @@
   					<h5>Quick links</h5>
   					<ul class="list-unstyled quick-links">
   						<li><a href="/"><i class="fa fa-angle-double-right"></i>Home</a></li>
-  						<li><a href="/browse"><i class="fa fa-angle-double-right"></i>Broswe</a></li>
+  						<li><a href="/browse"><i class="fa fa-angle-double-right"></i>Browse</a></li>
   						<li><a href="/faq"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
   						<li><a href="/register"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
   						<li><a href="/browse"><i class="fa fa-angle-double-right"></i>Videos</a></li>
