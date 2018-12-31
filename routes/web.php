@@ -34,7 +34,8 @@ Route::get('/smoke/vote/{id}', function($id){
 
       return back();
     } else {
-      return back()->withError('You have already upvoted this');
+      Vote::destroy($checkVote->id);
+      return back();
   }
 } else return redirect('/');
 });
