@@ -44,6 +44,19 @@
                 </div>
               </div>
               <h6 style="margin-top:.5rem" class="text-muted">Created by <a href="/users/{{ $smoke->user->id }}/">{{ $smoke->user->name }}</a></h6>
+              @php
+                $voteCount = 0;
+              @endphp
+              @foreach ($smoke->vote as $vote)
+                @php
+                  $voteCount++
+                @endphp
+              @endforeach
+              @if (Auth::User())
+                <div class="p-0 m-0" align="right">
+                  <a href="/smoke/vote/{{ $smoke->id }}"><i class="far fa-thumbs-up"></i>{{ $voteCount }}</a>
+                </div>
+              @endif
             </div>
           </div>
         </div>
@@ -93,5 +106,4 @@
     </ul>
   </nav>
 </div>
-{{ $smokes->currentPage() }}
 @endsection

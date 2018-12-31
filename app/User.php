@@ -20,4 +20,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function smoke(){
       return $this->hasMany('App\Smoke');
     }
+
+    public function vote(){
+      return $this->belongsToMany('App\Smoke', 'votes', 'smoke_id', 'user_id');
+    }
 }

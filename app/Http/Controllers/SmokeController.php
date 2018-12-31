@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Smoke;
+use App\Vote;
 use App\Mail\smokeApproved;
 use App\Mail\smokeSubmitted;
 use Illuminate\Support\Facades\Mail;
@@ -114,5 +115,4 @@ class SmokeController extends Controller
         return redirect('/');
       }
     }
-
 }

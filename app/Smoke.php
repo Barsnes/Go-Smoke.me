@@ -10,4 +10,8 @@ class Smoke extends Model
     return $this->belongsTo('App\User');
   }
 
+  public function vote(){
+    return $this->belongsToMany('App\User', 'votes', 'smoke_id', 'user_id');
+  }
+
 }
