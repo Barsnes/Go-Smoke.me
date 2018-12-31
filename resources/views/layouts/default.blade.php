@@ -41,7 +41,7 @@
         <!-- Authentication Links -->
         @if (isset($loggedInUser->id))
           <li class="nav-item">
-              <a style="margin-left:.5rem" class="btn btn-success my-2 my-sm-0" href="/smokes/create">Create new smoke</a>
+              <a style="margin-left:.5rem" class="btn btn-success my-2 my-sm-0" href="/smokes/create">Submit new smoke</a>
           </li>
         @endif
         @guest

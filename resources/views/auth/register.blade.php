@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+  Register
+@endsection
+
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -12,7 +16,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username*') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -66,6 +70,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <p class="text-muted text">*You will not be able to change your username</p>
                             </div>
                         </div>
                     </form>

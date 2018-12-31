@@ -16,16 +16,16 @@
         {{ csrf_field() }}
 
         <label for="">Title</label>
-        <input class="form-control" type="text" name="title" placeholder="Title">
+        <input class="form-control" type="text" name="title" placeholder="Title" value="{{ old('title') }}">
 
   <div class="row">
     <div class="col">
       <label for="">Video</label>
-      <input type="file" name="video" value="" class="form-control">
+      <input type="file" name="video" value="{{ old('video') }}" class="form-control">
     </div>
     <div class="col">
         <label for="team_id">Map:</label>
-        <select name="map" class="form-control" placeholder="Choose One">
+        <select name="map" class="form-control" placeholder="Choose One" value="{{ old('map') }}">
           <option disabled>Choose One</option>
           <option value="Cache">Cache</option>
           <option value="Dust 2">Dust 2</option>
@@ -38,7 +38,7 @@
     </div>
     <div class="col">
       <label for="">Difficulty</label>
-      <input type="range" list="tickmarks" class="form-control" name="difficulty">
+      <input type="range" list="tickmarks" class="form-control" name="difficulty" value="{{ old('difficulty') }}">
       <datalist id="tickmarks">
         <option value="0" label="Easy">
         <option value="10">
