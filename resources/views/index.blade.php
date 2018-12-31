@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container ">
   <div class="jumbotron bg-smoke">
     <div class="row offset-1">
       <div class="col">
@@ -32,7 +32,7 @@
   </div>
   <hr class="border-white">
   <h1 class="title">Top 3 smokes</h1>
-  <div class="row mt-5">
+  <div class="row mt-5 row-sm-1">
   @foreach ($smokes as $smoke)
     @if ($smoke->approved == '1')
       <div class="col-md-4">
@@ -70,6 +70,18 @@
       </div>
     @endif
   @endforeach
+  </div>
+  <hr class="border-white">
+  <div class="row-12">
+    <div class="col-6 bg-smoke p-3 mb-5" style="border-radius: 5px">
+          <h1 class="card-title">Submit a smoke</h1>
+          <hr>
+          <ol>
+            <li><a href="/register">Create an account</a></li>
+            <li>Click "<a href="/smokes/create">submit new smoke</a>"</li>
+            <li>Sit and wait for an admin to approve your smoke!</li>
+          </ol>
+    </div>
   </div>
 </div>
 <script type="text/javascript">
