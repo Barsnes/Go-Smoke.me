@@ -45,6 +45,11 @@ Route::get('/smoke/vote/{id}', function($id){
     $user = $user->id;
     $smoke = $id;
 
+    $checkUser = Smoke::find($id);
+    if ($user == $checkUser->user_id) {
+      return back();
+    }
+
     $checkVote = Vote::where('user_id', '=', $user)->where('smoke_id', '=', $smoke)->first();
 
     if (!$checkVote) {
