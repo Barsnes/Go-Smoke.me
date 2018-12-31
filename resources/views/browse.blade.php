@@ -57,6 +57,10 @@
                 <div class="p-0 m-0" align="right">
                   <a href="/smoke/vote/{{ $smoke->id }}"><i class="far fa-thumbs-up"></i>{{ $voteCount }}</a>
                 </div>
+              @else
+                <div class="p-0 m-0" align="right">
+                  <a href="/register"><i class="far fa-thumbs-up"></i>{{ $voteCount }}</a>
+                </div>
               @endif
             </div>
           </div>
