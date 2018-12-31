@@ -18,7 +18,7 @@
         @else
           <h3>Search for a keyword</h3>
         @endif
-        <form method="POST" role="search" onsubmit="get_sell_sheet(); return false;">
+        <form method="POST" role="search" onsubmit="get_search(); return false;">
           @csrf
           <div class="input-group">
               <input id="q" type="text" class="form-control" style="max-width:30%" name="q"
@@ -64,7 +64,7 @@
 </div>
 
 <script>
-  function get_sell_sheet(){
+  function get_search(){
     var q = document.getElementById("q").value;
     var url = "{{ Request::root() }}/search/?q=" + q;
     window.location.href = url;
