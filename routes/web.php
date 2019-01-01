@@ -14,6 +14,7 @@ Route::get('/browse', 'PagesController@browse');
 
 Route::resource('/smokes', 'SmokeController');
 Route::resource('/users', 'UserController');
+Route::resource('/faq', 'FaqController');
 
 Route::get('/admin/approve', 'SmokeController@approve');
 
