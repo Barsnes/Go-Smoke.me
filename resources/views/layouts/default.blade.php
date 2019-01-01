@@ -37,7 +37,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="/">GoSmoke.Me</a>
+  <a class="navbar-brand d-none d-md-block" href="/">GoSmoke.Me</a>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -60,7 +60,7 @@
     <ul class="navbar-nav ml-auto">
         <!-- Authentication Links -->
         @if (isset($loggedInUser->id))
-          <li class="nav-item">
+          <li class="nav-item d-none d-md-block">
               <a style="margin-left:.5rem" class="btn btn-success my-2 my-sm-0" href="/smokes/create">Submit new smoke</a>
           </li>
         @endif

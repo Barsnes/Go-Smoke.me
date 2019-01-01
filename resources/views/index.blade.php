@@ -8,19 +8,18 @@
 
 <div class="container ">
   <div class="jumbotron bg-smoke">
-    <div class="row offset-1">
+    <div class="row offset-md-1 offset-sm-0">
       <div class="col">
-        <h1 class="display-4">GoSmoke.Me</h1>
+        <h1 class="display-5">GoSmoke.Me</h1>
         <p class="lead">Your go to website for CSGO smokes</p>
-        <hr class="my-4">
       </div>
     </div>
-    <div class="row offset-1">
-      <div class="col">
+    <div class="row offset-md-1 offset-sm-0">
+      <div class="col-md-6 col-sm-12">
         <form method="POST" role="search" onsubmit="get_search(); return false;">
           @csrf
           <div class="input-group">
-              <input id="q" type="text" class="form-control" style="max-width:50%" name="q"
+              <input id="q" type="text" class="form-control" name="q"
                   placeholder="Search.. ex: Mirage">
               <button type="submit" class="btn btn-sm btn-info">
                   Search
@@ -73,7 +72,7 @@
   </div>
   <hr class="border-white">
   <div class="row-12">
-    <div class="col-6 bg-smoke p-3 mb-5" style="border-radius: 5px">
+    <div class="col-md-6 col-sm-12 bg-smoke p-3 mb-5" style="border-radius: 5px">
           <h1 class="card-title">Submit a smoke</h1>
           <hr>
           <ol>
