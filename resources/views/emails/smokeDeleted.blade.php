@@ -7,8 +7,8 @@
 </div>
 <div class="card bg-smoke">
   <div class="card-body">
-    <p>This is just an email informing you that your smoke, "<strong>{{ $smoke->title }}</strong>" has been submitted, and is now going through our approval system.<p>
-    <p>If you have followed the guidelines listed below, you should be in the green, and can sit back and relax:</p>
+    <p>This is just an email informing you that your smoke, "<strong>{{ $smoke->title }}</strong>" has been deleted, and is no longer in our system.<p>
+    <p>If you believe this was a mistake, take a look at our guidelines and submit your smoke again:</p>
     <ul>
       <li>The video must be high quality</li>
       <li>The video must show how to do the smoke in under 1 minute</li>

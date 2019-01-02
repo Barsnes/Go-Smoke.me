@@ -64,6 +64,11 @@
                 <a href="/register"><i class="far fa-thumbs-up"></i>{{ $voteCount }}</a>
               </div>
             @endif
+            {!! Form::model($smoke, array('route' => array('smokes.destroy', $smoke->id), 'method' => 'PUT')) !!}﻿
+              {{ method_field('DELETE') }}
+              @csrf
+              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </form>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Smoke;
 use App\Vote;
+use Illuminate\Support\Facades\File;
 use App\Mail\smokeApproved;
 use App\Mail\smokeSubmitted;
 use Illuminate\Support\Facades\Mail;
@@ -96,13 +97,14 @@ class SmokeController extends Controller
 
       $smoke = Smoke::find($id);
       $user = $smoke->user;
+      File::delete('smokeVideos/' . $smoke->video);
 
       Mail::to($user)->send(new smokeDeleted($smoke));
 
       Smoke::destroy($id);
 
       // Redirect
-      return redirect('/admin/approve');
+      return back();
     }
 
     public function approve(){

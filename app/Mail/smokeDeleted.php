@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class smokeSubmitted extends Mailable
+class smokeDeleted extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -22,6 +22,6 @@ class smokeSubmitted extends Mailable
 
     public function build()
     {
-      return $this->view('emails.smokeSubmitted');
+      return $this->view('emails.smokeDeleted');
     }
 }
