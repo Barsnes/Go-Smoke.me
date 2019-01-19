@@ -18,5 +18,6 @@ All the code is open source, and free to use. If you decide to redistribute, ple
 * Forge Laravel
 * MySql (InnoDB)
 * HTML/CSS/JS/PHP
+* Bootstrap
 
 
