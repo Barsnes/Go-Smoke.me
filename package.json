@@ -298,7 +298,7 @@
     "http-deceiver": "^1.2.7",
     "http-errors": "^1.6.3",
     "http-parser-js": "^0.5.0",
-    "http-proxy": "^1.17.0",
+    "http-proxy": "^1.18.1",
     "http-proxy-middleware": "^0.18.0",
     "https-browserify": "^1.0.0",
     "iconv-lite": "^0.4.23",
