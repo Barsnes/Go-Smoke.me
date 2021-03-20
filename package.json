@@ -632,7 +632,7 @@
     "spdy-transport": "^3.0.0",
     "split-string": "^3.1.0",
     "sprintf-js": "^1.0.3",
-    "ssri": "^6.0.1",
+    "ssri": "^8.0.1",
     "stable": "^0.1.8",
     "stackframe": "^1.0.4",
     "static-extend": "^0.1.2",
