@@ -161,7 +161,7 @@
     "css-tree": "^1.0.0-alpha.28",
     "css-unit-converter": "^1.1.1",
     "css-url-regex": "^1.1.0",
-    "css-what": "^2.1.2",
+    "css-what": "^5.0.1",
     "cssesc": "^0.1.0",
     "cssnano": "^4.1.8",
     "cssnano-preset-default": "^4.0.6",
